@@ -89,7 +89,23 @@
   - gt  
   下一个tab  
   
-  （未完待续）  
+  - :tabonly  
+  只保留当前tab  
+
+  - :tabr/tabfirst  
+  切换到第一个tab  
+
+  - :tabl/tablast  
+  切换到最后一个tab  
+
+  - :tabm [num]  
+  调整tab次序  
+
+  - :set showtabline=[0/1/2]  
+  标签栏显示模式  
+
+  - :tabdo  
+  同时在多个tab里进行操作  
 
 
 ### vim多文件切换  
