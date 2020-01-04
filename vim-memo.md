@@ -54,6 +54,9 @@
   - :only  
   仅保留当前窗口  
 
+  - :res[\+\-][num]  
+  调节窗口大小  
+
 
 ### vim tab  
   - :tabe [file name]  
