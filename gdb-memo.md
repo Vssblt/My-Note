@@ -2,11 +2,17 @@
 
 
 ### 非常基础的命令  
-  掌握这些命令就可以进行基础的调试
+  掌握这些命令就可以进行基础的调试。P.S.编译的时候记得加调试"-g"
 
 
   - $gdb [file name]  
   运行gdb并打开文件  
+
+  - $gdb -tui [file name]  
+  运行带有terminal ui的gdb  
+
+  - focus/layout  
+  同上  
 
   - file  
   使用gdb打开文件  
@@ -109,3 +115,5 @@
   - finish  
   继续执行直到当前函数返回  
 
+
+  如果你有兴趣或需求，可以修改gdb脚本，在~/.gdbinit，来定制你的gdb
