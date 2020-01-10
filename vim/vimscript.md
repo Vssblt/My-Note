@@ -9,7 +9,19 @@
     这段脚本将实现自动垂直分割屏幕并加载第一个和第二个文件到buffer
     
     >if (buflisted(2))
-    >	let fname = "vs " . bufname(2)
-    >	exe fname
-    > endif
+    >	let fname = "vs " . bufname(2)  
+    >	exe fname  
+    > endif  
 
+### ~/.vim/synatx/c.vim
+  - 这个文件需要从“/usr/share/vim/vim81/syntax”目录下复制，复制后可将C/C++代码进行高亮显示，但原版脚本高亮显示不尽人意，所以我给脚本增加了更多的高亮规则。
+
+    > hi cCustomSymbol gui=NONE cterm=bold ctermfg=yellow 
+    > hi cCustomCalcu gui=NONE cterm=bold ctermfg=yellow  
+    > hi cCustomClass gui=NONE cterm=bold  ctermfg=78  
+    > hi cCustomFunc  gui=NONE cterm=bold  ctermfg=9  
+    > hi cCustomComment gui=NONE cterm=bold  ctermfg=154  
+    > hi cCustomComment2 gui=NONE cterm=bold  ctermfg=154  
+    > hi cCustomComment3 gui=NONE cterm=bold  ctermfg=154  
+
+    需要确保你的terminal支持256位色彩，否则高亮将不会生效，这在大多数linux gui下是被支持的，cygwin下需要额外的设置，如果你的terminal不支持，可以更改代码中的数字为其他颜色。
