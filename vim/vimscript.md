@@ -8,11 +8,8 @@
 
     这段脚本将实现自动垂直分割屏幕并加载第一个和第二个文件到buffer
     
-    `if (buflisted(2))
-
-    `	let fname = "vs " . bufname(2)
-
-    `	exe fname
-
-    `endif
+    `if (buflisted(2))  
+    `	let fname = "vs " . bufname(2)  
+    `	exe fname  
+    `endif  
 
