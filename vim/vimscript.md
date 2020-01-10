@@ -14,7 +14,7 @@
     > endif  
 
 ### ~/.vim/synatx/c.vim
-  - 这个文件需要从“/usr/share/vim/vim81/syntax”目录下复制，复制后可将C/C++代码进行高亮显示，但原版脚本高亮显示不尽人意，所以我给脚本增加了更多的高亮规则。
+  - 这个文件默认是不存在的，需要从“/usr/share/vim/vim81/syntax”目录下复制，复制后可将C/C++代码进行高亮显示，但原版脚本高亮显示不尽人意，所以我给脚本增加了更多的高亮规则，将此段代码加至该文件末尾即可生效。
 
     > hi cCustomSymbol gui=NONE cterm=bold ctermfg=yellow 
     > hi cCustomCalcu gui=NONE cterm=bold ctermfg=yellow  
