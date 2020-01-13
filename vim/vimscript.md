@@ -46,6 +46,17 @@
 ### ~/.vim/synatx/c.vim
   - 这个文件默认是不存在的，需要从“/usr/share/vim/vim81/syntax”目录下复制，复制后可将C/C++代码进行高亮显示，但原版脚本高亮显示不尽人意，所以我给脚本增加了更多的高亮规则，将此段代码加至该文件末尾即可生效。
 
+    > " Highlight Class and Function names  
+    > syn match    cCustomParen    "(" contains=cParen,cCppParen  
+    > syn match    cCustomScope    "::"  
+    > syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope  
+    > syn match    cCustomFunc     "\w\+\s*(" contains=cCustomParen  
+    > syn match    cCustomSymbol   "[\{\}\(\)\[\]]"  
+    > syn match    cCustomCalcu    "[\+\-\*\/\=\<\>]"  
+    > syn match    cCustomComment  "\/\/[[:print:][:tab:]]*$" "contains=ctesttest  
+    > syn match    cCustomComment2  "\/\*[[:print:][:tab:]]\{-}\*\/" "contains=ctesttest  
+    > syn match    cCustomComment3  "\/\*\_[[:print:][:tab:]]\{-}\*\/" "contains=ctesttest  
+    >  
     > hi cCustomSymbol gui=NONE cterm=bold ctermfg=yellow  
     > hi cCustomCalcu gui=NONE cterm=bold ctermfg=yellow  
     > hi cCustomClass gui=NONE cterm=bold  ctermfg=78  
