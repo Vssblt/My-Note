@@ -52,7 +52,7 @@
     > syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope  
     > syn match    cCustomFunc     "\w\+\s*(" contains=cCustomParen  
     > syn match    cCustomSymbol   "[\{\}\(\)\[\]]"  
-    > syn match    cCustomCalcu    "[\+\-\*\/\=\<\>]"  
+    > syn match    cCustomCalcu    "[&\+\-\*\/\=\<\>]"  
     > syn match    cCustomComment  "\/\/[[:print:][:tab:]]*$" "contains=ctesttest  
     > syn match    cCustomComment2  "\/\*[[:print:][:tab:]]\{-}\*\/" "contains=ctesttest  
     > syn match    cCustomComment3  "\/\*\_[[:print:][:tab:]]\{-}\*\/" "contains=ctesttest  

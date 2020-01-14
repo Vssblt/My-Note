@@ -45,10 +45,10 @@
   - :new [file name]  
   打开文件，不填file name则为空文件  
 
-  - :vsp  
+  - :vsp/ctrl-w\_v  
   垂直分割  
 
-  - :sp  
+  - :sp/ctrl-w\_n  
   水平分割  
 
   - ctrl + w + [up/down/left/right/h/j/k/l]  
@@ -92,10 +92,10 @@
   - gT  
   上一个tab  
 
-  - gt  
-  下一个tab  
-  
-  - :tabonly  
+  - [num]gt/gt  
+   跳转到某一个tab/下一个tab  
+
+  - :tabo/tabonly  
   只保留当前tab  
 
   - :tabr/tabfirst  
@@ -187,3 +187,6 @@
 
   - :h [vim command]  
   vim help  
+
+  - :set viminfo='20,\"4096  
+  vim read write buffer
