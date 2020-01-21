@@ -9,10 +9,13 @@
   运行gdb并打开文件  
 
   - $gdb -tui [file name]  
-  运行带有terminal ui的gdb  
+  运行带有terminal ui的gdb。注意：若程序有输出，会破坏tui的显示，可使用重定向将程序输出到其他pts  
 
   - focus/layout  
   同上  
+
+  - tty [files]  
+  将程序输出重定向，例如：tty /dev/pts/1，如果存在pts-1，程序输出将显示在pts-1，可使用 $ w 查看当前登录用户  
 
   - file  
   使用gdb打开文件  
