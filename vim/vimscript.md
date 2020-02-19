@@ -22,13 +22,15 @@
     >set nowrap  
     >set cursorline  
     >set cursorcolumn  
-
+    >set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1  
+    
     listchars选项可设置不可显示字符的显示规则  
     invlist选项可设置显示不可显字符，nolist可关闭  
     laststatus选项可设置为3种显示模式的其中之一，这里选择了状态2，即一直显示文件状态，选项打开后将持续显示当前文件的文件名和编辑行与列  
     nowrap选项可用于设置禁止强制换行，wrap可设置为强制换行  
     cursorline选项将打开光标所在行显示，该选项打开后可能会覆盖下划线的屏幕显示，但好处是，在你进行多个窗口切换时依旧可以看到此窗口的当前编辑行，帮助快速定位  
     cursorcolumn选项将打开光标所在列的显示。  
+    fileencodings选项用于检测文件编码格式，vim会依次尝试使用下列文件编码格式解码文件，若成功解码则判断为该文件为此格式。所以应该将编码格式较为严格的放在前面，相对宽松的放在后面，用于防止误判。  
 
     以上选项均可使用:h listchars类似的方式查询帮助文档
 
