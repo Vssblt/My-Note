@@ -68,7 +68,7 @@
   - :tabnew [file name]  
   同上  
 
-  - :tab sp  
+  - :tab sp [file name]  
   打开当前缓冲区文件  
 
   - :tabf [file name]  
