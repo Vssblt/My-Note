@@ -19,10 +19,15 @@
     >set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:_  
     >set invlist  
     >set laststatus=2  
-    >set nowrap  
+    >"set nowrap  
     >set cursorline  
     >set cursorcolumn  
     >set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1  
+    >set showtabline=2  
+    >set hlsearch  
+    >set incsearch  
+    >set showmatch  
+    >set ignorecase  
     
     listchars选项可设置不可显示字符的显示规则  
     invlist选项可设置显示不可显字符，nolist可关闭  
@@ -31,6 +36,11 @@
     cursorline选项将打开光标所在行显示，该选项打开后可能会覆盖下划线的屏幕显示，但好处是，在你进行多个窗口切换时依旧可以看到此窗口的当前编辑行，帮助快速定位  
     cursorcolumn选项将打开光标所在列的显示。  
     fileencodings选项用于检测文件编码格式，vim会依次尝试使用下列文件编码格式解码文件，若成功解码则判断为该文件为此格式。所以应该将编码格式较为严格的放在前面，相对宽松的放在后面，用于防止误判。  
+    showtabline选项值为2时常亮显示tab状态栏  
+    hlsearch选项开启搜索高亮  
+    incsearch选项开启搜索全文高亮  
+    showmatch选项开启搜索实时匹配  
+    ignorecase选项关闭搜索大小写敏感  
 
     以上选项均可使用:h listchars类似的方式查询帮助文档
 
@@ -51,8 +61,8 @@
     > " Highlight Class and Function names  
     > syn match    cCustomParen    "(" contains=cParen,cCppParen  
     > syn match    cCustomScope    "::"  
-    > syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope  
-    > syn match    cCustomFunc     "\w\+\s*(" contains=cCustomParen  
+    > syn match    cCustomClass    "\w\\+\s*::" contains=cCustomScope  
+    > syn match    cCustomFunc     "\w\\+\s*(" contains=cCustomParen  
     > syn match    cCustomSymbol   "[\\{\\}\\(\\)\\[\\]]"  
     > syn match    cCustomCalcu    "[&\+\\-\*\/\=\<\>]"  
     > syn match    cCustomComment  "\/\/[[:print:][:tab:]]*$" "contains=ctesttest  
@@ -62,9 +72,9 @@
     > hi cCustomSymbol gui=NONE cterm=bold ctermfg=yellow  
     > hi cCustomCalcu gui=NONE cterm=bold ctermfg=yellow  
     > hi cCustomClass gui=NONE cterm=bold  ctermfg=78  
-    > hi cCustomFunc  gui=NONE cterm=bold  ctermfg=9  
-    > hi cCustomComment gui=NONE cterm=bold  ctermfg=154  
-    > hi cCustomComment2 gui=NONE cterm=bold  ctermfg=154  
-    > hi cCustomComment3 gui=NONE cterm=bold  ctermfg=154  
+    > hi cCustomFunc  gui=NONE cterm=bold  ctermfg=196     "9  
+    > hi cCustomComment gui=NONE cterm=bold  ctermfg=73    "154  
+    > hi cCustomComment2 gui=NONE cterm=bold  ctermfg=73     "154  
+    > hi cCustomComment3 gui=NONE cterm=bold  ctermfg=73     "154  
 
     需要确保你的terminal支持256位色彩，否则高亮将不会生效，这在大多数linux gui下是被支持的，cygwin下需要额外的设置，如果你的terminal不支持，可以更改代码中的数字为其他颜色。
