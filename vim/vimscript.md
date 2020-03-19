@@ -28,6 +28,8 @@
     >set incsearch  
     >set showmatch  
     >set ignorecase  
+    >hi CursorLine gui=NONE cterm=bold ctermbg=238 "8 = dark gray, 15 = white, 235 = dark dark gray. ctermfg: front ground  
+    >hi CursorColumn gui=NONE cterm=bold ctermbg=240  
     
     listchars选项可设置不可显示字符的显示规则  
     invlist选项可设置显示不可显字符，nolist可关闭  
