@@ -51,6 +51,12 @@
   - :sp/ctrl-w\_n  
   水平分割  
 
+  - :Sex  
+  水平分割窗口，并浏览文件系统  
+
+  - :Vex  
+  垂直分割窗口，并浏览文件系统  
+
   - ctrl + w + [up/down/left/right/h/j/k/l]  
   编辑焦点移动  
 
