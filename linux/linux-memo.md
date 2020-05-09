@@ -20,72 +20,71 @@
 
   2. dirs
 
-	dirs命令用于显示堆栈内容，[-v] 参数可将堆栈按行排列并显示行号。[+n] 显示当前第n层目录。[-c] 清空当前堆栈。
-	例如：
-	```shell
-	[root@centos bin]# dirs -v
-	 0  /bin
-	 1  /var/www/html
-	 2  /var/www/html
-	 3  ~
-	```
+  dirs命令用于显示堆栈内容，[-v] 参数可将堆栈按行排列并显示行号。[+n] 显示当前第n层目录。[-c] 清空当前堆栈。
+  例：
+```shell
+[root@centos bin]# dirs -v
+ 0  /bin
+ 1  /var/www/html
+ 2  /var/www/html
+ 3  ~
+```
 
   3. pushd
 
-	不加参数时，pushd将置换栈内最顶层的两个目录，由于栈顶目录永远为当前目录，因此执行后将切换目录至置换后的目录，其结果类似于`# cd -`。
-	`pushd [dir]`传入目录时，该目录将会从栈顶压入，并改变当前目录。
-	`pushd [+n]`传入标号将会使堆栈以栈循环的方式将目标目录循环至栈顶，此操作同样会改变当前目录。
-	`push [-n]`此参数将目录压入栈顶元素下面的位置，此操作不会改变当前目录。
+  不加参数时，pushd将置换栈内最顶层的两个目录，由于栈顶目录永远为当前目录，因此执行后将切换目录至置换后的目录，其结果类似于`# cd -`。
+  `pushd [dir]`传入目录时，该目录将会从栈顶压入，并改变当前目录。
+  `pushd [+n]`传入标号将会使堆栈以栈循环的方式将目标目录循环至栈顶，此操作同样会改变当前目录。
+  `push [-n]`此参数将目录压入栈顶元素下面的位置，此操作不会改变当前目录。
 
-	例：
-	```shell
-	[root@centos bin]# dirs -v
-	 0  /bin
-	 1  /var/www/html
-	 2  /var/www/html
-	 3  ~
-	[root@centos bin]# pushd +2
-	/var/www/html ~ /bin /var/www/html
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	 1  ~
-	 2  /bin
-	 3  /var/www/html
-	[root@centos html]# pushd +3
-	/var/www/html /var/www/html ~ /bin
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	 1  /var/www/html
-	 2  ~
-	 3  /bin
-	 ```
+  例：
+```shell
+[root@centos bin]# dirs -v
+ 0  /bin
+ 1  /var/www/html
+ 2  /var/www/html
+ 3  ~
+[root@centos bin]# pushd +2
+/var/www/html ~ /bin /var/www/html
+[root@centos html]# dirs -v
+ 0  /var/www/html
+ 1  ~
+ 2  /bin
+ 3  /var/www/html
+[root@centos html]# pushd +3
+/var/www/html /var/www/html ~ /bin
+[root@centos html]# dirs -v
+ 0  /var/www/html
+ 1  /var/www/html
+ 2  ~
+ 3  /bin
+ ```
 
   4. popd
-	
-	`popd`不加参数时默认弹出栈顶元素。
-	`popd [+n]`将编号n的元素删除。
-	`popd [-n]`将栈顶元素下面的元素删除。
+`popd`不加参数时默认弹出栈顶元素。
+`popd [+n]`将编号n的元素删除。
+`popd [-n]`将栈顶元素下面的元素删除。
 
-	例：
-	```shell
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	 1  /var/www/html
-	 2  ~
-	 3  /bin
-	[root@centos html]# popd
-	/var/www/html ~ /bin
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	 1  ~
-	 2  /bin
-	[root@centos html]# popd -n
-	/var/www/html /bin
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	 1  /bin
-	[root@centos html]# popd +1
-	/var/www/html
-	[root@centos html]# dirs -v
-	 0  /var/www/html
-	```
+例：
+```shell
+[root@centos html]# dirs -v
+ 0  /var/www/html
+ 1  /var/www/html
+ 2  ~
+ 3  /bin
+[root@centos html]# popd
+/var/www/html ~ /bin
+[root@centos html]# dirs -v
+ 0  /var/www/html
+ 1  ~
+ 2  /bin
+[root@centos html]# popd -n
+/var/www/html /bin
+[root@centos html]# dirs -v
+ 0  /var/www/html
+ 1  /bin
+[root@centos html]# popd +1
+/var/www/html
+[root@centos html]# dirs -v
+ 0  /var/www/html
+```
