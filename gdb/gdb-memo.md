@@ -5,8 +5,8 @@
   掌握这些命令就可以进行基础的调试。P.S.编译的时候记得加调试"-g"
 
 
-  - $gdb [file name]  
-  运行gdb并打开文件  
+  - $gdb [file name] core  
+  运行gdb并打开文件，core是崩溃后的堆栈信息，是可选的，如果有该文件则可加载  
 
   - $gdb -tui [file name]  
   运行带有terminal ui的gdb。注意：若程序有输出，会破坏tui的显示，可使用重定向将程序输出到其他pts  
@@ -46,6 +46,9 @@
 
   - watch [variable name] 或 watch {[variable name], [variable name], ...}  
   显示当前一个或多个变量的值，会在变量发生改变时显示  
+  
+  - info break/thread/args/locals/catch/registers/all-registers/line [name or number] 
+  分别是显示断点/线程/当前函数的参数/局部变量/异常/寄存器/所有寄存器/某行的地址  
 
   - ctrl + C  
   发送中断信号给程序，gdb会将程序暂停  
@@ -98,7 +101,7 @@
   执行下一句汇编，步过  
 
   - ignore [break number] [times]  
-  设置一个断点忽略册数  
+  设置一个断点忽略次数  
 
   - xbreak  
   在当前函数退出点上设置一个断点  
@@ -108,6 +111,18 @@
 
   - backtrace/bt  
   查看堆栈，可在函数崩溃时调试使用  
+  
+  - thread [number]  
+  切换线程  
+  
+  - set scheduler-locking on/off/(on step)  
+  on: 仅运行当前线程, off: 并发运行, step: 除了next/step只有当前线程会执行  
+  
+  - thread apply [number1 number2 ... ]/all [command]  
+  在所有线程或指定线程运行命令  
+  
+  - break [some args] thread [number1 number2 ...]/all  
+  在指定线程或所有线程的某一位置打断点  
 
   - whatis  
   显示当前变量的值和类型  
